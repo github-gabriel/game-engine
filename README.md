@@ -47,6 +47,6 @@ Für alle die die gesamte PDF lesen wollen: <a href="https://github.com/gabriel-
 
 ![](Resources/Rechnungen_2.png)
 
-## Korekturen
+## Korrekturen
 
 Falls ihr Fehler in meinen Notizen findet kontaktiert mich gerne über Discord (Gabriel.Dc#5550) oder EMail (gabriel.haberlach@gmail.com) und gebt mir Bescheid, was ihr in den Notizen für Fehler gefunden habt. Die Korrekturen werde ich dann unter diesem Punkt hier posten ^^
