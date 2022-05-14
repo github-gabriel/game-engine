@@ -5,8 +5,7 @@ Leider, da dieses Projekt zu der Zeit als ich in der 8. Klasse war entstanden is
 Meine Notizen und Erklärungen zu den einzelnen Themen werden hier unten zu sehen sein. Um manche Themen wie Diffuse Lighting
 oder Spectral Lighting zu verstehen musste ich jedoch auch noch Mathematische Grundlagen, welche für Operationen die bei diesen 
 Themen benötigt werden, lernen. Zum Beispiel ist bei Diffuse Lighting oder Spectral Lighting das Skalarprodukt zweier Vektoren
-wichtig, doch damit ich das alles verstehen konnte musste ich "Grundlagen" der Trigonometrie und Analytische Geometrie lernen, was
-wie gesagt alles unten in meinen Notizen nachzulesen ist.
+wichtig, doch damit ich das alles verstehen konnte musste ich "Grundlagen" der Trigonometrie und der Analytische Geometrie lernen, was wie gesagt alles unten in meinen Notizen nachzulesen ist.
 
 ## Skalarprodukt
 
