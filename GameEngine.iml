@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/../GameEngine/libraries/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../GameEngine/libraries/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../GameEngine/libraries/slick-util.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="openjdk-17" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="lwjgl.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../GameEngine/libraries/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="lwjgl_util.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../GameEngine/libraries/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slick-util.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../GameEngine/libraries/slick-util.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="windows" level="project" />
+  </component>
+</module>
