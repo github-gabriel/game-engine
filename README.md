@@ -7,6 +7,10 @@ oder Spectral Lighting zu verstehen musste ich jedoch auch noch Mathematische Gr
 Themen benötigt werden, lernen. Zum Beispiel ist bei Diffuse Lighting oder Spectral Lighting das Skalarprodukt zweier Vektoren
 wichtig, doch damit ich das alles verstehen konnte musste ich "Grundlagen" der Trigonometrie und der Analytische Geometrie lernen, was wie gesagt alles unten in meinen Notizen nachzulesen ist.
 
+## Zusammenfassung
+
+Für alle die die gesamte PDF lesen wollen: <a href="https://github.com/gabriel-java-github/game-engine/blob/main/Resources/GameEngine_Mathematik.pdf" target="_blank">"Grundlagen" der Trigonometrie und der Analytische Geometrie</a>
+
 ## Skalarprodukt
 
 ![](Resources/Skalarprodukt.png)
