@@ -7,7 +7,7 @@ oder Spectral Lighting zu verstehen musste ich jedoch auch noch Mathematische Gr
 Themen benötigt werden, lernen. Zum Beispiel ist bei Diffuse Lighting oder Spectral Lighting das Skalarprodukt zweier Vektoren
 wichtig, doch damit ich das alles verstehen konnte musste ich "Grundlagen" der Trigonometrie und der Analytischen Geometrie lernen, was wie gesagt alles unten in meinen Notizen nachzulesen ist.
 
-## ❗Disclaimer: Da ich mir diese Sachen selber beibringen musste, garantiere ich nicht für die Richtigkeit der Notizen❗
+### ❗Disclaimer: Da ich mir diese Sachen selber beibringen musste, garantiere ich nicht für die Richtigkeit der Notizen❗
 
 ## Zusammenfassung
 
