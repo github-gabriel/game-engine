@@ -16,6 +16,7 @@ Für alle die die gesamte PDF lesen wollen: <a href="https://github.com/gabriel-
 ## Skalarprodukt
 
 ![](Resources/Skalarprodukt.png)
+*Ergänzung: Da dort der Kosinus des Winkels Alpha, zwischen den beiden Vektoren, definiert wird, muss zwischen dem ![](http://www.sciweavers.org/tex2img.php?eq=%5Ccos%28%5Calpha%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) und der Definition ![](http://www.sciweavers.org/tex2img.php?eq=%5Cfrac%7B%5Coverrightarrow%7Ba%7D%5Ccdot%20%5Coverrightarrow%7Bb%7D%7D%7B%5Cleft%20%7C%20%5Coverrightarrow%7Ba%7D%20%5Cright%20%7C%5Ccdot%20%5Cleft%20%7C%20%5Coverrightarrow%7Bb%7D%20%5Cright%20%7C%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) selbstverständlich ein "Gleichzeichen" ![](http://www.sciweavers.org/tex2img.php?eq=%5Ccos%28%5Ctheta%20%29%20%3D%20%5Cfrac%7B%5Coverrightarrow%7Ba%7D%5Ccdot%20%5Coverrightarrow%7Bb%7D%7D%7B%5Cleft%20%7C%20%5Coverrightarrow%7Ba%7D%20%5Cright%20%7C%5Ccdot%20%5Cleft%20%7C%20%5Coverrightarrow%7Bb%7D%20%5Cright%20%7C%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
 ## Kosinus und Sinus
 
