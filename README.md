@@ -1,53 +1,9 @@
 # Game Engine
 
-Das ist meine erste "Game Engine" nach [dieser](https://www.youtube.com/watch?v=VS8wlS9hF8E&list=PLRIWtICgwaX0u7Rf9zkZhLoLuZVfUksDP&ab_channel=ThinMatrix) Tutorial Serie. Mich faszinierte hierbei, wie viel Mathematik benötigt wird.
-Leider, da dieses Projekt zu der Zeit als ich in der 8. Klasse war entstanden ist, musste ich mir die Themen selber "beibringen".
-Meine Notizen und Erklärungen zu den einzelnen Themen werden hier unten zu sehen sein. Um manche Themen wie Diffuse Lighting
-oder Spectral Lighting zu verstehen musste ich jedoch auch noch Mathematische Grundlagen, welche für Operationen die bei diesen 
-Themen benötigt werden, lernen. Zum Beispiel ist bei Diffuse Lighting oder Spectral Lighting das Skalarprodukt zweier Vektoren
-wichtig, doch damit ich das alles verstehen konnte musste ich "Grundlagen" der Trigonometrie und der Analytischen Geometrie lernen, was wie gesagt alles unten in meinen Notizen nachzulesen ist.
+Das ist meine erste Game Engine (in Java), nach [dieser](https://www.youtube.com/watch?v=VS8wlS9hF8E&list=PLRIWtICgwaX0u7Rf9zkZhLoLuZVfUksDP&ab_channel=ThinMatrix) Tutorial Serie. Spannend finde ich an diesem Projekt wie Computer mit für uns so selbstverständlichen Dingen umgehen. Um z.B. Lichteinfall zu berechnen oder den Spieler zu bewegen benötigt man etwas komplexere Mathematik die von außen gar keinen Sinn ergibt.
 
-### ❗Disclaimer: Da ich mir diese Sachen selber beibringen musste, garantiere ich nicht für die Richtigkeit der Notizen❗
+## Resourcen
 
-## Zusammenfassung
+Die gesamte PDF mit meinen Rechnungen/Erkenntnissen ist hier einsehbar: <a href="https://github.com/gabriel-java-github/game-engine/blob/main/Resources/GameEngine_Mathematik.pdf" target="_blank">"Grundlagen" der Trigonometrie und der Analytischen Geometrie</a>
 
-Für alle die die gesamte PDF lesen wollen: <a href="https://github.com/gabriel-java-github/game-engine/blob/main/Resources/GameEngine_Mathematik.pdf" target="_blank">"Grundlagen" der Trigonometrie und der Analytischen Geometrie</a>
 
-## Skalarprodukt
-
-![](Resources/Skalarprodukt.png)
-***Ergänzung: Da in der Abildung der Kosinus des Winkels Alpha, zwischen den beiden 2 dimensionalen Ortsvektoren a und b, definiert wird, muss zwischen dem Kosinus des Winkels Aplha und der Definition selbstverständlich ein Gleichheitszeichen*** 
-
-## Kosinus und Sinus
-
-![](Resources/Kosinus_und_Sinus.png)
-
-## Sinus
-
-![](Resources/Sinus.png)
-
-## Vektoren
-
-![](Resources/Vektoren.png)
-
-## Richtungsvektor
-
-![](Resources/Richtungsvektor.png)
-
-## Diffuse Beleuchtung
-
-![](Resources/Diffuse_Beleuchtung.png)
-
-## Spectral Lighting
-
-![](Resources/Spectral_Lighting.png)
-
-## Weitere Rechnungen
-
-![](Resources/Rechnungen.png)
-
-![](Resources/Rechnungen_2.png)
-
-## Korrekturen
-
-Falls ihr Fehler in meinen Notizen findet kontaktiert mich gerne über Discord (Gabriel.Dc#5550) oder EMail (gabriel.haberlach@gmail.com) und gebt mir Bescheid, was ihr in den Notizen für Fehler gefunden habt. Die Korrekturen werde ich dann unter diesem Punkt hier posten ^^
