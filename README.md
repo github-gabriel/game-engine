@@ -1,6 +1,6 @@
 # Game Engine
 
-Das ist meine erste Game Engine (in Java), nach [dieser](https://www.youtube.com/watch?v=VS8wlS9hF8E&list=PLRIWtICgwaX0u7Rf9zkZhLoLuZVfUksDP&ab_channel=ThinMatrix) Tutorial Serie. Spannend finde ich an diesem Projekt wie Computer mit für uns so selbstverständlichen Dingen umgehen. Um z.B. Lichteinfall zu berechnen oder den Spieler zu bewegen benötigt man etwas komplexere Mathematik die von außen gar keinen Sinn ergibt.
+Das ist meine erste Game Engine (in Java), nach [dieser](https://www.youtube.com/watch?v=VS8wlS9hF8E&list=PLRIWtICgwaX0u7Rf9zkZhLoLuZVfUksDP&ab_channel=ThinMatrix) Tutorial Serie mit [LWJGL](https://www.lwjgl.org/), einer Library die Zugang zu verschiedenen APIs für Spiele Entwicklung mit Java bietet. 
 
 ## Resourcen
 
