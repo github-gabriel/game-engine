@@ -25,7 +25,7 @@ Um ein Rechteck mit Dreiecken darzustellen benötigt man 2 Dreiecke. Wenn man Op
 
 Deshalb benutzt man ein weiteres VBO, ein Index Buffer, in den Attribute Lists des VAOs um anzugeben wie OpenGL die Vertices miteinander "verbinden" soll, um Dreiecke zu erstellen. So vermeidet man doppelte Informationen von Vertex Positionen bei an den Ecken übereinanderlappenden Dreiecken. Auch wenn dadurch ein neues VBO entsteht, eliminiert schon ein Index einen ganzen Vektor.
 
-<img src="resources/vertex_vs_index.svg">
+<img src="Resources/vertex_vs_index.svg">
 
 ## Shader
 
@@ -53,7 +53,7 @@ eine UV Koordinate angeben, die dann angibt wie die Textur auf das Modell gemapp
 In dem Fragment Shader wird dann über eine Methode für jeden Pixel die Farbe so gesetzt, dass sie der Farbe des Pixels der Textur entspricht. Da das für alle Pixel in dem
 Modell geschieht (durch die Interpolation vom Vertex zum Fragment Shader), hat man am Ende seine Textur auf das Modell übertragen.
 
-<img src="resources/texture_mapping.png">
+<img src="Resources/texture_mapping.png">
 
 ## Matrizen
 
@@ -71,7 +71,7 @@ Damit man nun die 3D Objekte auf einem 2D Bildschirm darstellen kann muss man di
 Eine Kamera im 3D Raum besteht aus einem Frustum, welcher meist die Form einer rechteckigen Pyramide hat. Das nähere Ende dieses Frustum nennt man Near Plane, das entferntere
 Ende die Far Plane. Die Projektionsmatrix hält nun Infos über diese Projektion, welche mit Hilfe des Abstandes zur Near und Far Plane, sowie der FOV berechnet werden können.
 
-<img src="resources/ViewFrustum.png">
+<img src="Resources/ViewFrustum.png">
 
 Da es in unserer Welt aber keine richtige Kamera gibt und alles nur eine Simulation einer Kamera ist, kann man die Kamera auch selbstverständlich nicht bewegen. Daher muss man
 die ganze Welt um die Kamera herumbewegen, anstatt irgendeine nicht existente Kamera versuchen zu bewegen. Das lässt sich auch mit einer Matrix machen und sie ist sozusagen das
@@ -121,7 +121,7 @@ gerendert werden sollen, verwendet man eine Blend Map. Die unterschiedlichen Far
 
 Die Farbe des Pixels am Ende ist eine Mixtur aus den Farben aller Pixel an der entsprechenden Stelle auf jeder Texturen, die verwendet werden. Dabei bestimmt der entsprechende Pixel auf der Blend Map wie die einzelnen Farben der verschiedenen Pixel für die finale Pixelfarbe gewichtet werden sollen.
 
-<img src="resources/BlendMap.png">
+<img src="Resources/BlendMap.png">
 
 ## Transparenz
 
