@@ -1,0 +1,11 @@
+de.gabriel.gameEngine
+de.gabriel.gameEngine.entities
+de.gabriel.gameEngine.input
+de.gabriel.gameEngine.logging
+de.gabriel.gameEngine.models
+de.gabriel.gameEngine.objConverter
+de.gabriel.gameEngine.renderEngine
+de.gabriel.gameEngine.shaders
+de.gabriel.gameEngine.terrain
+de.gabriel.gameEngine.textures
+de.gabriel.gameEngine.utils

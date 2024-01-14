@@ -1,0 +1,47 @@
+//FRAGMENT SHADER
+
+#version 400 core // GLSL Version 4.0
+
+// INPUTS (Output vom Vertex Shader)
+in vec2 pass_textureCoordinates; // Eingehende Textur Koordinaten vom Vertex Shader
+in vec3 surfaceNormal; // Eingehende Normalen vom Vertex Shader
+in vec3 toLightVector; // Eingehender Vektor vom Vertex zur Lichtquelle vom Vertex Shader
+in vec3 toCameraVector; // Eingehender Vektor vom Vertex zur Kamera vom Vertex Shader
+in float visibility; // Eingehende Sichtbarkeit vom Vertex Shader
+
+// OUTPUT (Farbe des Pixels, RGBA)
+out vec4 out_Color;
+
+uniform sampler2D modelTexture; // Textur
+uniform vec3 lightColor; // Farbe und Intensität des Lichts
+uniform float shineDamper; // Uniform Variable die den Glanz des Objekts bestimmt
+uniform float reflectivity; // Uniform Variable die die Reflektivität des Objekts bestimmt
+uniform vec3 skyColor; // Uniform Variable die die Farbe des Himmels bestimmt
+
+void main(void){
+
+	vec3 unitNormal = normalize(surfaceNormal); // Vertex Normal als Einheitsvektor
+	vec3 unitLightVector = normalize(toLightVector); // Vektor zur Lichtquelle als Einheitsvektor
+	
+	float nDotl = dot(unitNormal, unitLightVector); // Skalarprodukt zwischen der Normalen und dem Vektor zur Lichtquelle
+	float brightness = max(nDotl, 0.12); // Helligkeit zwischen 12 und 100 %; brightness > 0.12, dadurch Ambient Lighting
+	vec3 diffuse = brightness * lightColor; // Finale "Helligkeit" des Pixels
+	
+	vec3 unitVectorToCamera = normalize(toCameraVector); // Vektor zur Kamera als Einheitsvektor
+	vec3 lightDirection = -unitLightVector; // Vektor des einfallenden Lichts (Gegenteil des Vektors zur Lichtquelle)
+	vec3 reflectedLightDirection = reflect(lightDirection, unitNormal); // Reflektiertes Licht
+	
+	float specularFactor = dot(reflectedLightDirection, unitVectorToCamera); // Skalarprodukt zwischen dem reflektierten Licht und dem Vektor zur Kamera
+	specularFactor = max(specularFactor,0.0); // specularFactor > 0
+	float dampedFactor = pow(specularFactor, shineDamper); // Glanz des Objekts
+	vec3 finalSpecular = dampedFactor * reflectivity * lightColor; // Finale Reflektion
+
+	vec4 textureColor = texture(modelTexture, pass_textureCoordinates); // Farbe des Pixels entsprechend der Farbe desselben Pixels auf der Textur setzen
+	if(textureColor.a<0.5){
+		discard; // Wenn der Alpha Wert des Pixels kleiner als 0.5 ist, wird der Pixel "verworfen" bzw. nicht gerendert
+	}
+
+	out_Color = vec4(diffuse, 1) * textureColor + vec4(finalSpecular, 1) ;
+	out_Color = mix(vec4(skyColor,1),out_Color,visibility); // Mixen der Farbe des Pixels mit der Farbe des Himmels, abhängig von der Sichtbarkeit
+	
+}
