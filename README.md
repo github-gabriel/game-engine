@@ -31,7 +31,7 @@ java -jar .\game-engine.jar
 ## Resourcen
 
 Meine gesamten Rechnungen und Notizen, zur mathematischen Funktionsweise der Engine
-sind [dieser PDF](resources/GameEngine_Mathematik.pdf) zu entnehmen.
+sind [dieser PDF](Resources/GameEngine_Mathematik.pdf) zu entnehmen.
 
 Für weitere grundlegende Informationen über die Funktionsweise von Engines im Allgemeinen,
 siehe [diese Markdown](3D%20Engine.md) mit Informationen zur allgemeineren Funktionsweise von Engines.
