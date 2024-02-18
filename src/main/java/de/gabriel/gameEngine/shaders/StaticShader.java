@@ -5,7 +5,10 @@ import de.gabriel.gameEngine.entities.Light;
 import de.gabriel.gameEngine.utils.Maths;
 import lombok.extern.slf4j.Slf4j;
 import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
+
+import java.util.List;
 
 import static de.gabriel.gameEngine.Main.SHADER_PATH;
 
@@ -14,6 +17,12 @@ import static de.gabriel.gameEngine.Main.SHADER_PATH;
  */
 @Slf4j
 public class StaticShader extends ShaderProgram {
+
+    /**
+     * Maximale Anzahl an Lichtern, die ein Entity beeinflussen können.
+     * Findet sich wieder in den Shadern unter resources/shaders.
+     */
+    private static final int MAX_LIGHTS = 6;
 
     /**
      * Dateipfad des Vertex Shaders.
@@ -43,12 +52,17 @@ public class StaticShader extends ShaderProgram {
     /**
      * Die ID der Uniform Variable der Position des Lichts.
      */
-    private int location_lightPosition;
+    private int[] location_lightPosition;
 
     /**
      * Die ID der Uniform Variable der Farbe bzw. Intensität des Lichts.
      */
-    private int location_lightColor;
+    private int[] location_lightColor;
+
+    /**
+     * Die ID der Uniform Variable der Dämpfung des Lichts.
+     */
+    private int[] location_attenuation;
 
     /**
      * Die ID der Uniform Variable des Glanzfaktors.
@@ -69,6 +83,16 @@ public class StaticShader extends ShaderProgram {
      * Die ID der Uniform Variable der Himmelsfarbe.
      */
     private int location_skyColor;
+
+    /**
+     * Die ID der Uniform Variable der Anzahl der Reihen eines Texturatlasses.
+     */
+    private int location_numberOfRows;
+
+    /**
+     * Die ID der Uniform Variable des Offset einer Textur innerhalb eines Texturatlasses.
+     */
+    private int location_offset;
 
     public StaticShader() {
         super(VERTEX_FILE, FRAGMENT_FILE);
@@ -93,13 +117,43 @@ public class StaticShader extends ShaderProgram {
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
         location_projectionMatrix = super.getUniformLocation("projectionMatrix");
         location_viewMatrix = super.getUniformLocation("viewMatrix");
-        location_lightPosition = super.getUniformLocation("lightPosition");
-        location_lightColor = super.getUniformLocation("lightColor");
         location_shineDamper = super.getUniformLocation("shineDamper");
         location_reflectivity = super.getUniformLocation("reflectivity");
         location_useFakeLighting = super.getUniformLocation("useFakeLighting");
         location_skyColor = super.getUniformLocation("skyColor");
+        location_numberOfRows = super.getUniformLocation("numberOfRows");
+        location_offset = super.getUniformLocation("offset");
+
+        location_lightPosition = new int[MAX_LIGHTS];
+        location_lightColor = new int[MAX_LIGHTS];
+        location_attenuation = new int[MAX_LIGHTS];
+
+        for (int i = 0; i < MAX_LIGHTS; i++) {
+            location_lightPosition[i] = super.getUniformLocation("lightPosition[" + i + "]");
+            location_lightColor[i] = super.getUniformLocation("lightColor[" + i + "]");
+            location_attenuation[i] = super.getUniformLocation("attenuation[" + i + "]");
+        }
+
         log.info("Uniform locations loaded;");
+    }
+
+    /**
+     * Diese Methode lädt die Anzahl der Reihen eines Texturatlasses in die Uniform Variable im Shader.
+     *
+     * @param numberOfRows die Anzahl der Reihen eines Texturatlasses.
+     */
+    public void loadNumberOfRows(int numberOfRows) {
+        super.loadFloat(location_numberOfRows, numberOfRows);
+    }
+
+    /**
+     * Diese Methode lädt den Offset einer Textur innerhalb eines Texturatlasses in die Uniform Variable im Shader.
+     *
+     * @param x der X Offset der Textur innerhalb des Texturatlasses.
+     * @param y der Y Offset der Textur innerhalb des Texturatlasses.
+     */
+    public void loadOffset(float x, float y) {
+        super.loadVector(location_offset, new Vector2f(x, y));
     }
 
     /**
@@ -144,13 +198,22 @@ public class StaticShader extends ShaderProgram {
 
 
     /**
-     * Diese Methode lädt die Position und Farbe (bzw. Intensität) des Lichts in die Uniform Variable im Shader.
+     * Diese Methode lädt die Position und Farbe (bzw. Intensität) der Lichter in die Uniform Variablen im Shader.
      *
-     * @param light das Licht, dessen Position und Farbe (bzw. Intensität) in die Uniform Variable geladen werden soll.
+     * @param light die Liste an Lichtern, dessen Position und Farbe (bzw. Intensität) in die Uniform Variablen geladen werden soll.
      */
-    public void loadLight(Light light) {
-        super.loadVector(location_lightPosition, light.getPosition());
-        super.loadVector(location_lightColor, light.getColor());
+    public void loadLights(List<Light> light) {
+        for (int i = 0; i < MAX_LIGHTS; i++) {
+            if (i < light.size()) { // Nur Lichter, die in der Szene vorhanden sind, werden geladen.
+                super.loadVector(location_lightPosition[i], light.get(i).getPosition());
+                super.loadVector(location_lightColor[i], light.get(i).getColor());
+                super.loadVector(location_attenuation[i], light.get(i).getAttenuation());
+            } else { // Leere Lichter werden mit Position (0, 0, 0) und Farbe (0, 0, 0) geladen.
+                super.loadVector(location_lightPosition[i], new Vector3f(0, 0, 0));
+                super.loadVector(location_lightColor[i], new Vector3f(0, 0, 0));
+                super.loadVector(location_attenuation[i], new Vector3f(1, 0, 0));
+            }
+        }
     }
 
     /**

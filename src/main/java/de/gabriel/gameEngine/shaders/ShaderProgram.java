@@ -2,7 +2,9 @@ package de.gabriel.gameEngine.shaders;
 
 import lombok.extern.slf4j.Slf4j;
 import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector4f;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
@@ -170,6 +172,16 @@ public abstract class ShaderProgram {
     }
 
     /**
+     * Diese Methode lädt einen 4 dimensionalen Vektor in eine Uniform Variable im Shader.
+     *
+     * @param location die ID der Uniform Variable.
+     * @param vector   der Vektor, der in die Uniform Variable geladen werden soll.
+     */
+    protected void loadVector(int location, Vector4f vector) {
+        GL20.glUniform4f(location, vector.x, vector.y, vector.z, vector.w);
+    }
+
+    /**
      * Diese Methode lädt einen Vektor in eine Uniform Variable im Shader.
      *
      * @param location die ID der Uniform Variable.
@@ -177,6 +189,16 @@ public abstract class ShaderProgram {
      */
     protected void loadVector(int location, Vector3f vector) {
         GL20.glUniform3f(location, vector.x, vector.y, vector.z);
+    }
+
+    /**
+     * Diese Methode lädt einen 2 dimensionalen Vektor in eine Uniform Variable im Shader.
+     *
+     * @param location die ID der Uniform Variable.
+     * @param vector   der Vektor, der in die Uniform Variable geladen werden soll.
+     */
+    protected void loadVector(int location, Vector2f vector) {
+        GL20.glUniform2f(location, vector.x, vector.y);
     }
 
     /**

@@ -1,7 +1,7 @@
 package de.gabriel.gameEngine.input;
 
 import de.gabriel.gameEngine.entities.Camera;
-import de.gabriel.gameEngine.renderEngine.WindowManager;
+import de.gabriel.gameEngine.renderer.WindowManager;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.lwjgl.glfw.GLFW;
@@ -9,7 +9,6 @@ import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWKeyCallback;
 
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.glfw.GLFW.GLFW_DONT_CARE;
 
 /**
  * Diese Klasse registriert GLFW Callbacks für die Tastatur und die Maus und bewegt die Kamera

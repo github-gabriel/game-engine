@@ -32,14 +32,50 @@ public class Entity {
      */
     private float scale;
 
+    /**
+     * Gibt an welche Textur eines Texturatlasses verwendet werden soll.
+     * Standardmäßig beginnt die Nummerierung eines Texturatlasses oben links
+     * bei 0 und wird von links nach rechts und von oben nach unten fortgesetzt.
+     */
+    private int textureIndex = 0;
+
     public Entity(TexturedModel model, Vector3f position, float rotX, float rotY, float rotZ, float scale) {
-        super();
         this.model = model;
         this.position = position;
         this.rotX = rotX;
         this.rotY = rotY;
         this.rotZ = rotZ;
         this.scale = scale;
+    }
+
+    public Entity(TexturedModel model, int textureIndex, Vector3f position, float rotX, float rotY, float rotZ, float scale) {
+        this.textureIndex = textureIndex;
+        this.model = model;
+        this.position = position;
+        this.rotX = rotX;
+        this.rotY = rotY;
+        this.rotZ = rotZ;
+        this.scale = scale;
+    }
+
+    /**
+     * X Offset der Textur innerhalb des Texturatlasses.
+     *
+     * @return X Offset der Textur innerhalb des Texturatlasses.
+     */
+    public float getTextureXOffset() {
+        int column = textureIndex % model.texture().getNumberOfRows();
+        return (float) column / (float) model.texture().getNumberOfRows();
+    }
+
+    /**
+     * Y Offset der Textur innerhalb des Texturatlasses.
+     *
+     * @return Y Offset der Textur innerhalb des Texturatlasses.
+     */
+    public float getTextureYOffset() {
+        int row = textureIndex / model.texture().getNumberOfRows();
+        return (float) row / (float) model.texture().getNumberOfRows();
     }
 
     /**

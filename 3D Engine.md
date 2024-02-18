@@ -121,10 +121,18 @@ gerendert werden sollen, verwendet man eine Blend Map. Die unterschiedlichen Far
 
 Die Farbe des Pixels am Ende ist eine Mixtur aus den Farben aller Pixel an der entsprechenden Stelle auf jeder Texturen, die verwendet werden. Dabei bestimmt der entsprechende Pixel auf der Blend Map wie die einzelnen Farben der verschiedenen Pixel für die finale Pixelfarbe gewichtet werden sollen.
 
-<img src="resources/BlendMap.png">
+<img src="resources/BlendMap.png" width="900px">
 
 ## Transparenz
 
 Das Problem mit Transparenz ist, dass Objekte die später gerendert werden durch das transparente Objekt nicht mehr sichtbar sein werden, da die Farbe des gerenderten Pixels vom transparenten Objekt schon "feststeht". Daher ist die Reihenfolge beim Rendern von transparenten Objekten sehr wichtig.
 
 In dieser Engine wird eine Textur die Pixel mit einem Alpha Wert unter 0.5 hat als transparent angesehen und daher einfach nicht gerendert.
+
+## Cubemap Textures
+
+Textur die auf einen Würfel angewandt wird, so dass sich auf jeder Seite des Würfels dann eine 2D Textur befindet. Es sind jedoch keine 6 unterschiedlichen Texturen für die
+verschiedenen Seiten, sondern 1 Textur mit 6 unterschiedlichen Abschnitten, die sich auf den Würfel mappen lassen. Um diese zu samplen kann man keine einfachen x, y Koordinaten
+verwenden, von denen dann die Pixelfarbe wiedergegeben wird, sondern man benötigt einen 3D Vektor der den Pixel vom Zentrum des Würfels angibt.
+
+<img src="resources/cubemaps_sampling.png">

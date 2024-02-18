@@ -2,12 +2,14 @@ package de.gabriel.gameEngine.shaders;
 
 import de.gabriel.gameEngine.entities.Camera;
 import de.gabriel.gameEngine.entities.Light;
-import de.gabriel.gameEngine.renderEngine.TerrainRenderer;
+import de.gabriel.gameEngine.renderer.TerrainRenderer;
 import de.gabriel.gameEngine.terrain.Terrain;
 import de.gabriel.gameEngine.utils.Maths;
 import lombok.extern.slf4j.Slf4j;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
+
+import java.util.List;
 
 import static de.gabriel.gameEngine.Main.SHADER_PATH;
 
@@ -18,14 +20,20 @@ import static de.gabriel.gameEngine.Main.SHADER_PATH;
 public class TerrainShader extends ShaderProgram {
 
     /**
+     * Maximale Anzahl an Lichtern, die ein Entity beeinflussen können.
+     * Findet sich wieder in den Shadern unter resources/shaders.
+     */
+    private static final int MAX_LIGHTS = 6;
+
+    /**
      * Dateipfad des Terrain Vertex Shaders.
      */
-    private static final String VERTEX_FILE = SHADER_PATH + "terrainVertexShader.txt";
+    private static final String VERTEX_FILE = SHADER_PATH + "/terrain/" + "terrainVertexShader.txt";
 
     /**
      * Dateipfad des Terrain Fragment Shaders.
      */
-    private static final String FRAGMENT_FILE = SHADER_PATH + "terrainFragmentShader.txt";
+    private static final String FRAGMENT_FILE = SHADER_PATH + "/terrain/" + "terrainFragmentShader.txt";
 
     /**
      * Die ID der Uniform Variable der Transformationsmatrix.
@@ -45,12 +53,17 @@ public class TerrainShader extends ShaderProgram {
     /**
      * Die ID der Uniform Variable der Position des Lichts.
      */
-    private int location_lightPosition;
+    private int[] location_lightPosition;
 
     /**
      * Die ID der Uniform Variable der Farbe bzw. Intensität des Lichts.
      */
-    private int location_lightColor;
+    private int[] location_lightColor;
+
+    /**
+     * Die ID der Uniform Variable der Dämpfung des Lichts.
+     */
+    private int[] location_attenuation;
 
     /**
      * Die ID der Uniform Variable des Glanzfaktors.
@@ -115,8 +128,6 @@ public class TerrainShader extends ShaderProgram {
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
         location_projectionMatrix = super.getUniformLocation("projectionMatrix");
         location_viewMatrix = super.getUniformLocation("viewMatrix");
-        location_lightPosition = super.getUniformLocation("lightPosition");
-        location_lightColor = super.getUniformLocation("lightColor");
         location_shineDamper = super.getUniformLocation("shineDamper");
         location_reflectivity = super.getUniformLocation("reflectivity");
         location_skyColor = super.getUniformLocation("skyColor");
@@ -126,6 +137,17 @@ public class TerrainShader extends ShaderProgram {
         location_gTexture = super.getUniformLocation("gTexture");
         location_bTexture = super.getUniformLocation("bTexture");
         location_blendMap = super.getUniformLocation("blendMap");
+
+        location_lightPosition = new int[MAX_LIGHTS];
+        location_lightColor = new int[MAX_LIGHTS];
+        location_attenuation = new int[MAX_LIGHTS];
+
+        for (int i = 0; i < MAX_LIGHTS; i++) {
+            location_lightPosition[i] = super.getUniformLocation("lightPosition[" + i + "]");
+            location_lightColor[i] = super.getUniformLocation("lightColor[" + i + "]");
+            location_attenuation[i] = super.getUniformLocation("attenuation[" + i + "]");
+        }
+
         log.info("Uniform locations loaded;");
     }
 
@@ -180,9 +202,18 @@ public class TerrainShader extends ShaderProgram {
      *
      * @param light das Licht, dessen Position und Farbe (bzw. Intensität) in die Uniform Variable geladen werden soll.
      */
-    public void loadLight(Light light) {
-        super.loadVector(location_lightPosition, light.getPosition());
-        super.loadVector(location_lightColor, light.getColor());
+    public void loadLights(List<Light> light) {
+        for (int i = 0; i < MAX_LIGHTS; i++) {
+            if (i < light.size()) { // Nur Lichter, die in der Szene vorhanden sind, werden geladen.
+                super.loadVector(location_lightPosition[i], light.get(i).getPosition());
+                super.loadVector(location_lightColor[i], light.get(i).getColor());
+                super.loadVector(location_attenuation[i], light.get(i).getAttenuation());
+            } else { // Leere Lichter werden mit Position (0, 0, 0) und Farbe (0, 0, 0) geladen.
+                super.loadVector(location_lightPosition[i], new Vector3f(0, 0, 0));
+                super.loadVector(location_lightColor[i], new Vector3f(0, 0, 0));
+                super.loadVector(location_attenuation[i], new Vector3f(1, 0, 0));
+            }
+        }
     }
 
     /**

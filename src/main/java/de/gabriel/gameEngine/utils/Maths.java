@@ -2,6 +2,7 @@ package de.gabriel.gameEngine.utils;
 
 import de.gabriel.gameEngine.entities.Camera;
 import org.joml.Matrix4f;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 
 /**
@@ -36,6 +37,21 @@ public class Maths {
     }
 
     /**
+     * Erstellt eine Transformationsmatrix mit den angegebenen Parametern in der Reihenfolge der Parameter.
+     *
+     * @param translation die Translation, um die der Vertex verschoben werden soll.
+     * @param scale       der Skalierungsfaktor auf den Achsen x und y.
+     * @return die erstellte Transformationsmatrix.
+     */
+    public static Matrix4f createTransformationMatrix(Vector2f translation, Vector2f scale) {
+        Matrix4f matrix = new Matrix4f();
+        matrix.identity();
+        matrix.translate(new Vector3f(translation.x, translation.y, 0f));
+        matrix.scale(new Vector3f(scale.x, scale.y, 1f));
+        return matrix;
+    }
+
+    /**
      * Erstellt eine View Matrix, die die Bewegung der Kamera simuliert und "das Gegenteil der Projektionsmatrix ist".
      *
      * @param camera die Kamera, für die die View Matrix erstellt werden soll.
@@ -50,6 +66,21 @@ public class Maths {
         Vector3f negativeCameraPos = new Vector3f(-cameraPos.x, -cameraPos.y - PLAYER_HEIGHT, -cameraPos.z); // Negative Kamera-Position, um die Welt in die entgegengesetzte Richtung zu bewegen, um Bewegung simulieren.
         viewMatrix.translate(negativeCameraPos);
         return viewMatrix;
+    }
+
+    /**
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param pos
+     * @return
+     */
+    public static float barryCentric(Vector3f p1, Vector3f p2, Vector3f p3, Vector2f pos) {
+        float det = (p2.z - p3.z) * (p1.x - p3.x) + (p3.x - p2.x) * (p1.z - p3.z);
+        float l1 = ((p2.z - p3.z) * (pos.x - p3.x) + (p3.x - p2.x) * (pos.y - p3.z)) / det;
+        float l2 = ((p3.z - p1.z) * (pos.x - p3.x) + (p1.x - p3.x) * (pos.y - p3.z)) / det;
+        float l3 = 1.0f - l1 - l2;
+        return l1 * p1.y + l2 * p2.y + l3 * p3.y;
     }
 
 }

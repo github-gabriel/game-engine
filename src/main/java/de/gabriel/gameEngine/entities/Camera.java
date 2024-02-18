@@ -1,9 +1,9 @@
 package de.gabriel.gameEngine.entities;
 
+import de.gabriel.gameEngine.terrain.Terrain;
 import lombok.Getter;
 import lombok.Setter;
 import org.joml.Vector3f;
-import org.lwjgl.glfw.GLFW;
 
 /**
  * Repräsentiert die virtuelle Kamera.
@@ -25,7 +25,7 @@ public class Camera {
     /**
      * Position der Kamera.
      */
-    private Vector3f position = new Vector3f(0, 0, 0);
+    private Vector3f position = new Vector3f(-400, 0, 0);
 
     /**
      * Drehung der Kamera um die eigene y-Achse.
@@ -136,16 +136,20 @@ public class Camera {
      *
      * @param delta die Zeit, die seit dem letzten Frame vergangen ist.
      */
-    public void update(float delta) {
+    public void update(float delta, Terrain terrain) {
+        float height = terrain.getHeightOfTerrain(position.x, position.z); // Höhe des Terrains an der Position der Kamera
+
         if (isJumping) {
             position.y += verticalVelocity * delta; // Vertikale Geschwindigkeit für y anwenden
             verticalVelocity += gravity * delta;  // Gravitation für vertikale Geschwindigkeit anwenden ("verringern")
 
-            if (position.y <= 0) { // Boden bei y = 0
-                position.y = 0;
+            if (position.y < height) {
+                position.y = height;
                 isJumping = false; // Nicht mehr am Springen
                 verticalVelocity = 0; // Keine vertikale Geschwindigkeit mehr
             }
+        } else {
+            position.y = height;
         }
     }
 
