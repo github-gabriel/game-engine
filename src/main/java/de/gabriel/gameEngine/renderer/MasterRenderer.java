@@ -5,7 +5,6 @@ import de.gabriel.gameEngine.entities.Camera;
 import de.gabriel.gameEngine.entities.Entity;
 import de.gabriel.gameEngine.entities.Light;
 import de.gabriel.gameEngine.models.TexturedModel;
-import de.gabriel.gameEngine.renderer.normals.NormalMappingRenderer;
 import de.gabriel.gameEngine.shaders.StaticShader;
 import de.gabriel.gameEngine.shaders.TerrainShader;
 import de.gabriel.gameEngine.skybox.SkyboxRenderer;

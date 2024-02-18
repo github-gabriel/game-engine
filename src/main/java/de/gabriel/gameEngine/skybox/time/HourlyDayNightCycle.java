@@ -5,7 +5,7 @@ public class HourlyDayNightCycle implements TimeCycle {
     /**
      * Die Länge eines Tages (in Stunden).
      */
-    private final float DAY_LENGTH = 0.01f;
+    private final float DAY_LENGTH = 1f;
 
     /**
      * Die Startzeit des Tag-Nacht-Zyklus.

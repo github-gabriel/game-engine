@@ -1,4 +1,4 @@
-package de.gabriel.gameEngine.renderer.normals;
+package de.gabriel.gameEngine.renderer;
 
 
 import de.gabriel.gameEngine.entities.Camera;
@@ -6,7 +6,7 @@ import de.gabriel.gameEngine.entities.Entity;
 import de.gabriel.gameEngine.entities.Light;
 import de.gabriel.gameEngine.models.RawModel;
 import de.gabriel.gameEngine.models.TexturedModel;
-import de.gabriel.gameEngine.renderer.MasterRenderer;
+import de.gabriel.gameEngine.shaders.NormalMappingShader;
 import de.gabriel.gameEngine.textures.ModelTexture;
 import de.gabriel.gameEngine.utils.Maths;
 import org.joml.Matrix4f;

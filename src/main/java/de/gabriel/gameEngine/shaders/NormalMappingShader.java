@@ -1,7 +1,6 @@
-package de.gabriel.gameEngine.renderer.normals;
+package de.gabriel.gameEngine.shaders;
 
 import de.gabriel.gameEngine.entities.Light;
-import de.gabriel.gameEngine.shaders.ShaderProgram;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -75,33 +74,33 @@ public class NormalMappingShader extends ShaderProgram {
         }
     }
 
-    protected void connectTextureUnits() {
+    public void connectTextureUnits() {
         super.loadInt(location_modelTexture, 0);
         super.loadInt(location_normalMapSampler, 1);
     }
 
-    protected void loadNumberOfRows(int numberOfRows) {
+    public void loadNumberOfRows(int numberOfRows) {
         super.loadFloat(location_numberOfRows, numberOfRows);
     }
 
-    protected void loadOffset(float x, float y) {
+    public void loadOffset(float x, float y) {
         super.loadVector(location_offset, new Vector2f(x, y));
     }
 
-    protected void loadSkyColor(float r, float g, float b) {
+    public void loadSkyColor(float r, float g, float b) {
         super.loadVector(location_skyColor, new Vector3f(r, g, b));
     }
 
-    protected void loadShineVariables(float damper, float reflectivity) {
+    public void loadShineVariables(float damper, float reflectivity) {
         super.loadFloat(location_shineDamper, damper);
         super.loadFloat(location_reflectivity, reflectivity);
     }
 
-    protected void loadTransformationMatrix(Matrix4f matrix) {
+    public void loadTransformationMatrix(Matrix4f matrix) {
         super.loadMatrix(location_transformationMatrix, matrix);
     }
 
-    protected void loadLights(List<Light> lights, Matrix4f viewMatrix) {
+    public void loadLights(List<Light> lights, Matrix4f viewMatrix) {
         for (int i = 0; i < MAX_LIGHTS; i++) {
             if (i < lights.size()) {
                 super.loadVector(location_lightPositionEyeSpace[i], getEyeSpacePosition(lights.get(i), viewMatrix));
@@ -115,11 +114,11 @@ public class NormalMappingShader extends ShaderProgram {
         }
     }
 
-    protected void loadViewMatrix(Matrix4f viewMatrix) {
+    public void loadViewMatrix(Matrix4f viewMatrix) {
         super.loadMatrix(location_viewMatrix, viewMatrix);
     }
 
-    protected void loadProjectionMatrix(Matrix4f projection) {
+    public void loadProjectionMatrix(Matrix4f projection) {
         super.loadMatrix(location_projectionMatrix, projection);
     }
 
