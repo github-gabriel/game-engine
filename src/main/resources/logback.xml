@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
     <conversionRule conversionWord="highlightLogLevel"
-                    converterClass="de.gabriel.gameEngine.logging.HighlightLogLevel"/>
+                    converterClass="de.gabriel.engine.logging.HighlightLogLevel"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -11,7 +11,7 @@
         </encoder>
     </appender>
 
-    <logger name="de.gabriel.gameEngine" level="TRACE" additivity="false">
+    <logger name="de.gabriel.engine" level="TRACE" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
     <root level="WARN">

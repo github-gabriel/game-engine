@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="2024-01-14" name="dc.created">
-    <meta content="declaration: package: de.gabriel.gameEngine.renderer, class: EntityRenderer" name="description">
+    <meta content="declaration: package: de.gabriel.engine.renderer, class: EntityRenderer" name="description">
     <meta content="javadoc/ClassWriterImpl" name="generator">
     <link href="../../../../stylesheet.css" rel="stylesheet" title="Style" type="text/css">
     <link href="../../../../script-dir/jquery-ui.min.css" rel="stylesheet" title="Style" type="text/css">
@@ -88,13 +88,14 @@ loadScripts(document, 'script');</script>
             <!-- ======== START OF CLASS DATA ======== -->
             <div class="header">
                 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a
-                        href="package-summary.html">de.gabriel.gameEngine.renderer</a></div>
+                        href="package-summary.html">de.gabriel.engine.renderer</a></div>
                 <h1 class="title" title="Klasse EntityRenderer">Klasse EntityRenderer</h1>
             </div>
             <div class="inheritance" title="Vererbungsbaum"><a
                     class="external-link"
-                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="Klasse oder Schnittstelle in java.lang">java.lang.Object</a>
-                <div class="inheritance">de.gabriel.gameEngine.renderer.EntityRenderer</div>
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html"
+                    title="Klasse oder Schnittstelle in java.lang">java.lang.Object</a>
+                <div class="inheritance">de.gabriel.engine.renderer.EntityRenderer</div>
             </div>
             <section class="class-description" id="class-description">
                 <hr>
@@ -102,7 +103,8 @@ loadScripts(document, 'script');</script>
                         class="element-name type-name-label">EntityRenderer</span>
                     <span class="extends-implements">extends <a
                             class="external-link"
-                            href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="Klasse oder Schnittstelle in java.lang">Object</a></span></div>
+                            href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html"
+                            title="Klasse oder Schnittstelle in java.lang">Object</a></span></div>
                 <div class="block">Rendert alle Entities in der Szene. Optimiert mit Batches für Entities mit derselben
                     Textur
                     (und möglicherweise unterschiedlichen Transformationen).
@@ -121,7 +123,7 @@ loadScripts(document, 'script');</script>
                                 <div class="table-header col-last">Beschreibung</div>
                                 <div class="col-first even-row-color"><code>private final <a
                                         href="../shaders/StaticShader.html"
-                                        title="Klasse in de.gabriel.gameEngine.shaders">StaticShader</a></code></div>
+                                        title="Klasse in de.gabriel.engine.shaders">StaticShader</a></code></div>
                                 <div class="col-second even-row-color"><code><a class="member-name-link" href="#shader">shader</a></code>
                                 </div>
                                 <div class="col-last even-row-color">
@@ -143,7 +145,7 @@ loadScripts(document, 'script');</script>
                                         href="#%3Cinit%3E(de.gabriel.gameEngine.shaders.StaticShader,org.joml.Matrix4f)">EntityRenderer</a>
                                     <wbr>
                                     (<a href="../shaders/StaticShader.html"
-                                        title="Klasse in de.gabriel.gameEngine.shaders">StaticShader</a>&nbsp;shader,
+                                        title="Klasse in de.gabriel.engine.shaders">StaticShader</a>&nbsp;shader,
                                     org.joml.Matrix4f&nbsp;projectionMatrix)</code></div>
                                 <div class="col-last even-row-color">&nbsp;</div>
                             </div>
@@ -155,20 +157,26 @@ loadScripts(document, 'script');</script>
                             <h2>Methodenübersicht</h2>
                             <div id="method-summary-table">
                                 <div aria-orientation="horizontal" class="table-tabs" role="tablist">
-                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="true" class="active-table-tab"
-                                            id="method-summary-table-tab0" onclick="show('method-summary-table', 'method-summary-table', 3)"
+                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="true"
+                                            class="active-table-tab"
+                                            id="method-summary-table-tab0"
+                                            onclick="show('method-summary-table', 'method-summary-table', 3)"
                                             onkeydown="switchTab(event)"
                                             role="tab"
                                             tabindex="0">Alle Methoden
                                     </button>
-                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="false" class="table-tab"
-                                            id="method-summary-table-tab2" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)"
+                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="false"
+                                            class="table-tab"
+                                            id="method-summary-table-tab2"
+                                            onclick="show('method-summary-table', 'method-summary-table-tab2', 3)"
                                             onkeydown="switchTab(event)"
                                             role="tab"
                                             tabindex="-1">Instanzmethoden
                                     </button>
-                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="false" class="table-tab"
-                                            id="method-summary-table-tab4" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)"
+                                    <button aria-controls="method-summary-table.tabpanel" aria-selected="false"
+                                            class="table-tab"
+                                            id="method-summary-table-tab4"
+                                            onclick="show('method-summary-table', 'method-summary-table-tab4', 3)"
                                             onkeydown="switchTab(event)"
                                             role="tab"
                                             tabindex="-1">Konkrete Methoden
@@ -187,7 +195,7 @@ loadScripts(document, 'script');</script>
                                                      href="#prepareInstance(de.gabriel.gameEngine.entities.Entity)">prepareInstance</a>
                                                 <wbr>
                                                 (<a href="../entities/Entity.html"
-                                                    title="Klasse in de.gabriel.gameEngine.entities">Entity</a>&nbsp;entity)</code>
+                                                    title="Klasse in de.gabriel.engine.entities">Entity</a>&nbsp;Entity)</code>
                                         </div>
                                         <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
                                             <div class="block">Bereitet die Instanz einer Entity vor, indem die
@@ -202,7 +210,7 @@ loadScripts(document, 'script');</script>
                                                     href="#prepareTexturedModel(de.gabriel.gameEngine.models.TexturedModel)">prepareTexturedModel</a>
                                                 <wbr>
                                                 (<a href="../models/TexturedModel.html"
-                                                    title="Klasse in de.gabriel.gameEngine.models">TexturedModel</a>&nbsp;model)</code>
+                                                    title="Klasse in de.gabriel.engine.models">TexturedModel</a>&nbsp;model)</code>
                                         </div>
                                         <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
                                             <div class="block">Bereitet das texturierte Modell zum Rendern vor.</div>
@@ -216,17 +224,18 @@ loadScripts(document, 'script');</script>
                                                     href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html"
                                                     title="Klasse oder Schnittstelle in java.util">Map</a>&lt;<a
                                                         href="../models/TexturedModel.html"
-                                                        title="Klasse in de.gabriel.gameEngine.models">TexturedModel</a>,
+                                                        title="Klasse in de.gabriel.engine.models">TexturedModel</a>,
                                                 <wbr>
                                                 <a class="external-link"
-                                                   href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="Klasse oder Schnittstelle in java.util">List</a>&lt;<a
+                                                   href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html"
+                                                   title="Klasse oder Schnittstelle in java.util">List</a>&lt;<a
                                                         href="../entities/Entity.html"
-                                                        title="Klasse in de.gabriel.gameEngine.entities">Entity</a>&gt;&gt;&nbsp;entities)</code>
+                                                        title="Klasse in de.gabriel.engine.entities">Entity</a>&gt;&gt;&nbsp;entities)</code>
                                         </div>
                                         <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
                                             <div class="block">Rendert die Entities die dasselbe <a
                                                     href="../models/TexturedModel.html"
-                                                    title="Klasse in de.gabriel.gameEngine.models"><code>TexturedModel</code></a>
+                                                    title="Klasse in de.gabriel.engine.models"><code>TexturedModel</code></a>
                                                 verwenden in Batches,
                                                 um die Anzahl der Aufrufe von OpenGL zu minimieren.
                                             </div>
@@ -246,28 +255,37 @@ loadScripts(document, 'script');</script>
                             <div class="inherited-list">
                                 <h3 id="methods-inherited-from-class-java.lang.Object">Von Klasse geerbte Methoden&nbsp;java.lang.<a
                                         class="external-link"
-                                        href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="Klasse oder Schnittstelle in java.lang">Object</a>
+                                        href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html"
+                                        title="Klasse oder Schnittstelle in java.lang">Object</a>
                                 </h3>
                                 <code><a
                                         class="external-link"
-                                        href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="Klasse oder Schnittstelle in java.lang">clone</a>,
+                                        href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()"
+                                        title="Klasse oder Schnittstelle in java.lang">clone</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="Klasse oder Schnittstelle in java.lang">equals</a>,
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)"
+                                       title="Klasse oder Schnittstelle in java.lang">equals</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="Klasse oder Schnittstelle in java.lang">finalize</a>,
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()"
+                                       title="Klasse oder Schnittstelle in java.lang">finalize</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="Klasse oder Schnittstelle in java.lang">getClass</a>,
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()"
+                                       title="Klasse oder Schnittstelle in java.lang">getClass</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="Klasse oder Schnittstelle in java.lang">hashCode</a>,
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()"
+                                       title="Klasse oder Schnittstelle in java.lang">hashCode</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="Klasse oder Schnittstelle in java.lang">notify</a>,
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()"
+                                       title="Klasse oder Schnittstelle in java.lang">notify</a>,
                                     <a class="external-link"
                                        href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()"
                                        title="Klasse oder Schnittstelle in java.lang">notifyAll</a>, <a
                                             class="external-link"
-                                            href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="Klasse oder Schnittstelle in java.lang">toString</a>,
+                                            href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()"
+                                            title="Klasse oder Schnittstelle in java.lang">toString</a>,
                                     <a class="external-link"
-                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="Klasse oder Schnittstelle in java.lang">wait</a>, <a
+                                       href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()"
+                                       title="Klasse oder Schnittstelle in java.lang">wait</a>, <a
                                             class="external-link"
                                             href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)"
                                             title="Klasse oder Schnittstelle in java.lang">wait</a>, <a
@@ -290,7 +308,7 @@ loadScripts(document, 'script');</script>
                                         <h3>shader</h3>
                                         <div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span
                                                 class="return-type"><a href="../shaders/StaticShader.html"
-                                                                       title="Klasse in de.gabriel.gameEngine.shaders">StaticShader</a></span>&nbsp;<span
+                                                                       title="Klasse in de.gabriel.engine.shaders">StaticShader</a></span>&nbsp;<span
                                                 class="element-name">shader</span></div>
                                         <div class="block">Das Shader Programm für statische Objekte, bzw. Entities.
                                         </div>
@@ -312,7 +330,7 @@ loadScripts(document, 'script');</script>
                                                 class="element-name">EntityRenderer</span>
                                             <wbr>
                                             <span class="parameters">(<a href="../shaders/StaticShader.html"
-                                                                         title="Klasse in de.gabriel.gameEngine.shaders">StaticShader</a>&nbsp;shader,
+                                                                         title="Klasse in de.gabriel.engine.shaders">StaticShader</a>&nbsp;shader,
  org.joml.Matrix4f&nbsp;projectionMatrix)</span></div>
                                     </section>
                                 </li>
@@ -336,15 +354,16 @@ loadScripts(document, 'script');</script>
                                                     href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html"
                                                     title="Klasse oder Schnittstelle in java.util">Map</a>&lt;<a
                                                     href="../models/TexturedModel.html"
-                                                    title="Klasse in de.gabriel.gameEngine.models">TexturedModel</a>,<wbr><a
+                                                    title="Klasse in de.gabriel.engine.models">TexturedModel</a>,<wbr><a
                                                     class="external-link"
                                                     href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html"
-                                                    title="Klasse oder Schnittstelle in java.util">List</a>&lt;<a href="../entities/Entity.html"
-                                                                                         title="Klasse in de.gabriel.gameEngine.entities">Entity</a>&gt;&gt;&nbsp;entities)</span>
+                                                    title="Klasse oder Schnittstelle in java.util">List</a>&lt;<a
+                                                    href="../entities/Entity.html"
+                                                    title="Klasse in de.gabriel.engine.entities">Entity</a>&gt;&gt;&nbsp;entities)</span>
                                         </div>
                                         <div class="block">Rendert die Entities die dasselbe <a
                                                 href="../models/TexturedModel.html"
-                                                title="Klasse in de.gabriel.gameEngine.models"><code>TexturedModel</code></a>
+                                                title="Klasse in de.gabriel.engine.models"><code>TexturedModel</code></a>
                                             verwenden in Batches,
                                             um die Anzahl der Aufrufe von OpenGL zu minimieren.
                                         </div>
@@ -364,7 +383,7 @@ loadScripts(document, 'script');</script>
                                                 class="return-type">void</span>&nbsp;<span class="element-name">prepareTexturedModel</span>
                                             <wbr>
                                             <span class="parameters">(<a href="../models/TexturedModel.html"
-                                                                         title="Klasse in de.gabriel.gameEngine.models">TexturedModel</a>&nbsp;model)</span>
+                                                                         title="Klasse in de.gabriel.engine.models">TexturedModel</a>&nbsp;model)</span>
                                         </div>
                                         <div class="block">Bereitet das texturierte Modell zum Rendern vor.</div>
                                         <dl class="notes">
@@ -391,14 +410,15 @@ loadScripts(document, 'script');</script>
                                                 class="return-type">void</span>&nbsp;<span class="element-name">prepareInstance</span>
                                             <wbr>
                                             <span class="parameters">(<a href="../entities/Entity.html"
-                                                                         title="Klasse in de.gabriel.gameEngine.entities">Entity</a>&nbsp;entity)</span>
+                                                                         title="Klasse in de.gabriel.engine.entities">Entity</a>&nbsp;Entity)</span>
                                         </div>
                                         <div class="block">Bereitet die Instanz einer Entity vor, indem die
                                             Transformations-Matrix für diese Entities geladen wird.
                                         </div>
                                         <dl class="notes">
                                             <dt>Parameter:</dt>
-                                            <dd><code>entity</code> - das Entity, für das die Transformation geladen
+                                            <dd><code>Entity</code> - das Entity, für das die Transformation
+                                                geladen
                                                 werden soll.
                                             </dd>
                                         </dl>
